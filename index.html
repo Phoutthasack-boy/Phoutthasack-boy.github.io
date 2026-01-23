@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Profile</title>
+
+  <!-- Google Font: Noto Sans Lao -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b1020;
+      --card: #141827;
+      --accent: #ffb347;
+      --muted: #9da3be;
+      --border: #252a3d;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Noto Sans Lao", system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1d2847, #050814);
+      color: #e6e9ff;
+    }
+
+    .card {
+      width: min(980px, 96vw);
+      padding: 26px 32px 30px;
+      border-radius: 22px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.75),
+        0 0 0 1px rgba(255, 255, 255, 0.02);
+    }
+
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 20px;
+    }
+
+    .title-block h1 {
+      margin: 0;
+      font-size: 24px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .title-block p {
+      margin: 6px 0 0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .photo-placeholder {
+      width: 92px;
+      height: 92px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #1f2742, #39446b);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #c7ccef;
+    }
+    .profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    }
+    .columns {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 26px;
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+    }
+
+    .section-title {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .field {
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .field span.label {
+      display: inline-block;
+      min-width: 90px;
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .tag {
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 720px) {
+      .card {
+        padding: 20px 18px 22px;
+      }
+      .top {
+        flex-direction: row-reverse;
+      }
+      .columns {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="card">
+    <header class="top">
+      <div class="title-block">
+        <h1>Welcome To My Profile</h1>
+        <p>Student • Developer </p>
+      </div>
+      <div class="photo-placeholder">
+      <img src="file.png" alt="Your Photo" class="profile-photo">
+      </div>
+    </header>
+
+    <section class="columns">
+      <!-- Lao section -->
+      <section>
+        <h2 class="section-title">ຂໍ້ມູນພື້ນຖານ</h2>
+
+        <div class="field">
+          <span class="label">ຊື່</span>
+          <span>ທ.ພຸດທະສັກ ສີປະມວນ</span>
+        </div>
+
+        <div class="field">
+          <span class="label">ຊື່ຫຼິ້ນ</span>
+          <span>ບອຍ</span>
+        </div>
+
+        <div class="field">
+          <span class="label">ຕໍາແໜ່ງ</span>
+          <span>ນັກພັດທະນາ software / ນັກສຶກສາ</span>
+        </div>
+
+        <div class="field">
+          <span class="label">ອາຍຸ</span>
+          <span>21 ປີ</span>
+        </div>
+
+        <div class="field">
+          <span class="label">ສັນຊາດ</span>
+          <span>ລາວ</span>
+        </div>
+
+        <div class="field">
+          <span class="label">ສະຖານະ</span>
+          <span>ນັກສຶກສາປີ 3 ENA</span>
+        </div>
+
+        <h2 class="section-title">ຕິດຕໍ່</h2>
+
+        <div class="field">
+          <span class="label">Email</span>
+          <a href="mailto:Boysipamoune@gmail.com">Boysipamoune@gmail.com</a>
+        </div>
+
+        <div class="field">
+          <span class="label">Facebook</span>
+          <a href="https://www.facebook.com/share/17s2Mkwdbc/" target="_blank">
+            facebook.com/Phoutthasack
+          </a>
+        </div>
+        <div class="field">
+          <span class="label">Whatsapp</span>
+          <a href="https://web.whatsapp.com/">+856 2093503657</a>
+        </div>
+      </section>
+
+      <!-- English section -->
+      <section>
+        <h2 class="section-title">Information</h2>
+
+        <div class="field">
+          <span class="label">Name</span>
+          <span>Mr Phoutthasack SIPAMUAN</span>
+        </div>
+
+        <div class="field">
+          <span class="label">Nickname</span>
+          <span>Boy</span>
+        </div>
+
+        <div class="field">
+          <span class="label">Position</span>
+          <span>Software Engineer / Student</span>
+        </div>
+
+        <div class="field">
+          <span class="label">About</span>
+          <span>
+            Passionate about programming, electronics and AI, focusing on
+            building simple and useful products.
+          </span>
+        </div>
+
+        <h2 class="section-title">Skills & Interests</h2>
+
+        <div class="field">
+          <span class="label">Skills</span>
+          <span>HTML / CSS, C / Python, Arduino, Raspberry Pi</span>
+        </div>
+
+        <div class="field">
+          <span class="label">Interests</span>
+          <div class="tags">
+            <span class="tag">Programming</span>
+            <span class="tag">Electronics</span>
+            <span class="tag">Artificial Intelligence</span>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
