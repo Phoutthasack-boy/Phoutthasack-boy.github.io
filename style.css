@@ -1,0 +1,146 @@
+:root {
+    --primary: #2ecc71;
+    --primary-dark: #27ae60;
+    --accent: #ff6b6b;
+    --dark: #2c3e50;
+    --light: #f8f9fa;
+    --white: #ffffff;
+    --shadow: 0 4px 15px rgba(0,0,0,0.08);
+    --radius: 12px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', 'Noto Sans Lao', sans-serif; }
+body { background-color: #f0f2f5; color: var(--dark); line-height: 1.6; }
+
+/* Navbar */
+.navbar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    position: sticky; top: 0; z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    padding: 1rem 0;
+}
+.nav-content { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.5rem; font-weight: 700; color: var(--primary-dark); }
+.nav-actions { display: flex; align-items: center; gap: 15px; }
+.cart-icon { position: relative; font-size: 1.5rem; text-decoration: none; cursor: pointer; }
+#cartCount {
+    position: absolute; top: -5px; right: -8px;
+    background: var(--accent); color: white;
+    font-size: 0.7rem; padding: 2px 6px; border-radius: 50%;
+}
+.lang-switcher button {
+    border: 1px solid #ddd; background: transparent;
+    padding: 5px 10px; border-radius: 20px; cursor: pointer;
+    font-size: 0.8rem; transition: 0.3s;
+}
+.lang-switcher button.active { background: var(--dark); color: white; border-color: var(--dark); }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* Hero */
+.hero {
+    /* ຢ່າລືມເອົາຮູບທີ່ gen ມາໃສ່ຊື່ banner.png */
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('banner.png');
+    background-size: cover;
+    background-position: center;
+    text-align: center; 
+    padding: 100px 20px;
+    border-radius: 0 0 30px 30px; 
+    margin-bottom: 40px;
+    color: white;
+}
+.hero h2 { font-size: 2.8rem; color: white; margin-bottom: 15px; text-shadow: 0 2px 5px rgba(0,0,0,0.3); }
+.hero p { color: #f0f0f0; margin-bottom: 30px; font-size: 1.2rem; text-shadow: 0 1px 3px rgba(0,0,0,0.3); }
+
+/* Buttons */
+.btn-primary, .btn-checkout, .btn-confirm {
+    background: var(--primary); color: white;
+    padding: 12px 25px; border-radius: 30px;
+    text-decoration: none; border: none; font-weight: 600;
+    cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;
+    display: inline-block;
+}
+.btn-primary:hover, .btn-checkout:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(46, 204, 113, 0.4); }
+
+/* Filter Bar */
+.section-header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; margin-bottom: 30px; gap: 15px; }
+.filter-bar { display: flex; gap: 10px; flex-wrap: wrap; }
+.filter-bar input, .filter-bar select {
+    padding: 10px 15px; border: 1px solid #ddd; border-radius: 25px; outline: none;
+}
+
+/* Product Grid */
+.product-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 25px;
+    min-height: 200px;
+}
+.product-card {
+    background: var(--white); border-radius: var(--radius);
+    overflow: hidden; box-shadow: var(--shadow);
+    transition: transform 0.3s ease; position: relative;
+    display: flex; flex-direction: column;
+}
+.product-card:hover { transform: translateY(-5px); }
+.product-card img { width: 100%; height: 200px; object-fit: cover; background: #eee; }
+.card-info { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
+.card-info h3 { font-size: 1.1rem; margin-bottom: 5px; }
+.price { color: var(--primary-dark); font-weight: 700; font-size: 1.2rem; margin-bottom: auto;}
+.btn-add {
+    width: 100%; padding: 10px; margin-top: 15px;
+    background: var(--light); color: var(--dark);
+    border: none; border-radius: 8px; cursor: pointer; font-weight: 600;
+    transition: 0.2s;
+}
+.btn-add:hover { background: var(--dark); color: white; }
+
+/* Checkout Layout */
+.checkout-wrapper {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 50px;
+}
+@media (max-width: 768px) { .checkout-wrapper { grid-template-columns: 1fr; } }
+.cart-box, .checkout-box {
+    background: white; padding: 25px; border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+/* Cart Items */
+.cart-item {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 10px 0; border-bottom: 1px solid #eee;
+}
+.qty-controls button {
+    width: 25px; height: 25px; border-radius: 50%; border: 1px solid #ddd;
+    background: white; cursor: pointer;
+}
+.qty-val { margin: 0 10px; font-weight: 600; }
+.btn-remove { color: var(--accent); background: none; border: none; font-size: 1.2rem; cursor: pointer; margin-left: 10px; }
+.total-row { display: flex; justify-content: space-between; margin-top: 15px; font-weight: bold; font-size: 1.2rem; }
+.price-highlight { color: var(--primary-dark); }
+
+/* Forms */
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; margin-bottom: 5px; font-weight: 500; font-size: 0.9rem; }
+.form-group input, .form-group textarea {
+    width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px;
+    font-family: inherit;
+}
+.btn-checkout { width: 100%; margin-top: 10px; }
+
+/* Modal */
+.modal {
+    display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6); backdrop-filter: blur(5px);
+    justify-content: center; align-items: center; z-index: 1000;
+}
+.modal-content {
+    background: white; padding: 30px; border-radius: 20px;
+    text-align: center; width: 90%; max-width: 400px;
+    animation: slideUp 0.3s ease; position: relative;
+}
+@keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.close-modal { position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; }
+.qr-img { width: 180px; height: 180px; border-radius: 10px; margin: 20px 0; border: 2px dashed #ddd; padding: 5px; }
+.bank-details { background: #f8f9fa; padding: 15px; border-radius: 10px; margin: 15px 0; font-size: 0.95rem; color: #555; }
+.total-amount { color: var(--accent); font-size: 2rem; margin: 5px 0; }
+.btn-confirm { width: 100%; background: #27ae60; }
+footer { text-align: center; padding: 30px; color: #777; font-size: 0.9rem; margin-top: 50px; }

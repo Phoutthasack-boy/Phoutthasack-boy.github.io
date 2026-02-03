@@ -1,268 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="lo">
 <head>
-  <meta charset="UTF-8" />
-  <title>My Profile</title>
-
-  <!-- Google Font: Noto Sans Lao -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --bg: #0b1020;
-      --card: #141827;
-      --accent: #ffb347;
-      --muted: #9da3be;
-      --border: #252a3d;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: "Noto Sans Lao", system-ui, -apple-system, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #1d2847, #050814);
-      color: #e6e9ff;
-    }
-
-    .card {
-      width: min(980px, 96vw);
-      padding: 26px 32px 30px;
-      border-radius: 22px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      box-shadow:
-        0 18px 40px rgba(0, 0, 0, 0.75),
-        0 0 0 1px rgba(255, 255, 255, 0.02);
-    }
-
-    .top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      margin-bottom: 20px;
-    }
-
-    .title-block h1 {
-      margin: 0;
-      font-size: 24px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .title-block p {
-      margin: 6px 0 0;
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    .photo-placeholder {
-      width: 92px;
-      height: 92px;
-      border-radius: 18px;
-      background: linear-gradient(135deg, #1f2742, #39446b);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: #c7ccef;
-    }
-    .profile-photo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    }
-    .columns {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 26px;
-      border-top: 1px solid var(--border);
-      padding-top: 20px;
-    }
-
-    .section-title {
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--muted);
-      margin-bottom: 10px;
-    }
-
-    .field {
-      margin-bottom: 8px;
-      font-size: 14px;
-    }
-
-    .field span.label {
-      display: inline-block;
-      min-width: 90px;
-      color: var(--muted);
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 6px;
-    }
-
-    .tag {
-      padding: 4px 8px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 720px) {
-      .card {
-        padding: 20px 18px 22px;
-      }
-      .top {
-        flex-direction: row-reverse;
-      }
-      .columns {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ຮ້ານຂາຍໝາກໄມ້ | Fresh Fruit Shop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@300;400;500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <main class="card">
-    <header class="top">
-      <div class="title-block">
-        <h1>Welcome To My Profile</h1>
-        <p>Student • Developer </p>
-      </div>
-      <div class="photo-placeholder">
-      <img src="file.png" alt="Your Photo" class="profile-photo">
-      </div>
+    
+    <nav class="navbar">
+        <div class="container nav-content">
+            <h1 class="logo">🍏 <span data-i18n="shopName">ຮ້ານໝາກໄມ້ສົດ</span></h1>
+            <div class="nav-actions">
+                <a href="#cart" class="cart-icon">
+                    🛒 <span id="cartCount">0</span>
+                </a>
+                <div class="lang-switcher">
+                    <button onclick="setLanguage('lo')" id="btn-lo" class="active">LA</button>
+                    <button onclick="setLanguage('en')" id="btn-en">EN</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <h2 data-i18n="hero.title">ຍິນດີຕ້ອນຮັບສູ່ຮ້ານໝາກໄມ້ສົດ</h2>
+            <p data-i18n="hero.subtitle">ສົດໃໝ່ຈາກສວນ ສົ່ງຕົງເຖິງໜ້າບ້ານທ່ານ</p>
+            <a href="#products" class="btn-primary" data-i18n="nav.products">ເລືອກຊື້ສິນຄ້າ</a>
+        </div>
     </header>
 
-    <section class="columns">
-      <!-- Lao section -->
-      <section>
-        <h2 class="section-title">ຂໍ້ມູນພື້ນຖານ</h2>
-
-        <div class="field">
-          <span class="label">ຊື່</span>
-          <span>ທ.ພຸດທະສັກ ສີປະມວນ</span>
+    <section id="products" class="section-products">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-i18n="products.title">ສິນຄ້າແນະນຳ</h2>
+                <div class="filter-bar">
+                    <input type="text" id="searchInput" data-i18n-placeholder="search.placeholder" placeholder="ຄົ້ນຫາ..." onkeyup="searchProducts()">
+                    <select id="categoryFilter" onchange="filterByCategory()">
+                        <option value="all" data-i18n="filter.all">ທັງໝົດ</option>
+                        <option value="tropical" data-i18n="filter.tropical">ເຂດຮ້ອນ</option>
+                        <option value="citrus" data-i18n="filter.citrus">ໝາກໄມ້ສົ້ມ</option>
+                        <option value="berry" data-i18n="filter.berry">ໝາກເບີຣີ</option>
+                    </select>
+                </div>
+            </div>
+            <div class="product-grid" id="productGrid">
+                </div>
         </div>
-
-        <div class="field">
-          <span class="label">ຊື່ຫຼິ້ນ</span>
-          <span>ບອຍ</span>
-        </div>
-
-        <div class="field">
-          <span class="label">ຕໍາແໜ່ງ</span>
-          <span>ນັກພັດທະນາ software / ນັກສຶກສາ</span>
-        </div>
-
-        <div class="field">
-          <span class="label">ອາຍຸ</span>
-          <span>21 ປີ</span>
-        </div>
-
-        <div class="field">
-          <span class="label">ສັນຊາດ</span>
-          <span>ລາວ</span>
-        </div>
-
-        <div class="field">
-          <span class="label">ສະຖານະ</span>
-          <span>ນັກສຶກສາປີ 3 ENA</span>
-        </div>
-
-        <h2 class="section-title">ຕິດຕໍ່</h2>
-
-        <div class="field">
-          <span class="label">Email</span>
-          <a href="mailto:Boysipamoune@gmail.com">Boysipamoune@gmail.com</a>
-        </div>
-
-        <div class="field">
-          <span class="label">Facebook</span>
-          <a href="https://www.facebook.com/share/17s2Mkwdbc/" target="_blank">
-            facebook.com/Phoutthasack
-          </a>
-        </div>
-        <div class="field">
-          <span class="label">Whatsapp</span>
-          <a href="https://web.whatsapp.com/">+856 2093503657</a>
-        </div>
-      </section>
-
-      <!-- English section -->
-      <section>
-        <h2 class="section-title">Information</h2>
-
-        <div class="field">
-          <span class="label">Name</span>
-          <span>Mr Phoutthasack SIPAMUAN</span>
-        </div>
-
-        <div class="field">
-          <span class="label">Nickname</span>
-          <span>Boy</span>
-        </div>
-
-        <div class="field">
-          <span class="label">Position</span>
-          <span>Software Engineer / Student</span>
-        </div>
-
-        <div class="field">
-          <span class="label">About</span>
-          <span>
-            Passionate about programming, electronics and AI, focusing on
-            building simple and useful products.
-          </span>
-        </div>
-
-        <h2 class="section-title">Skills & Interests</h2>
-
-        <div class="field">
-          <span class="label">Skills</span>
-          <span>HTML / CSS, C / Python, Arduino, Raspberry Pi</span>
-        </div>
-
-        <div class="field">
-          <span class="label">Interests</span>
-          <div class="tags">
-            <span class="tag">Programming</span>
-            <span class="tag">Electronics</span>
-            <span class="tag">Artificial Intelligence</span>
-          </div>
-        </div>
-      </section>
     </section>
-  </main>
+
+    <div class="checkout-wrapper container">
+        <section id="cart" class="cart-box">
+            <h2 data-i18n="cart.title">ກະຕ່າສິນຄ້າ</h2>
+            <div id="cartItems" class="cart-items-container">
+                <p class="empty-state" data-i18n="cart.empty">ຍັງບໍ່ມີສິນຄ້າໃນກະຕ່າ</p>
+            </div>
+            <div class="cart-summary">
+                <div class="total-row">
+                    <span data-i18n="cart.total">ລວມທັງໝົດ:</span>
+                    <span id="totalPrice" class="price-highlight">0 ₭</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="checkout" class="checkout-box">
+            <h2 data-i18n="checkout.title">ຂໍ້ມູນຈັດສົ່ງ</h2>
+            <form id="checkoutForm" onsubmit="submitOrder(event)">
+                <div class="form-group">
+                    <label data-i18n="checkout.name">ຊື່-ນາມສະກຸນ</label>
+                    <input type="text" id="customerName" required placeholder="...">
+                </div>
+                <div class="form-group">
+                    <label data-i18n="checkout.phone">ເບີໂທລະສັບ</label>
+                    <input type="tel" id="customerPhone" required placeholder="020 xxxx xxxx">
+                </div>
+                <div class="form-group">
+                    <label data-i18n="checkout.address">ທີ່ຢູ່ຈັດສົ່ງ</label>
+                    <textarea id="customerAddress" rows="3" required placeholder="..."></textarea>
+                </div>
+                <button type="submit" class="btn-checkout" data-i18n="checkout.submit">ສັ່ງຊື້ ແລະ ຊຳລະເງິນ</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p data-i18n="footer.copyright">© 2026 Fresh Fruit Shop Laos</p>
+    </footer>
+
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closePaymentModal()">&times;</span>
+            <div class="modal-header">
+                <h2 data-i18n="payment.title">📱 ສະແກນ BCEL One</h2>
+            </div>
+            
+            <div class="qr-wrapper">
+                <img src="QR.png" alt="Payment QR" class="qr-img">
+            </div>
+            
+            <div class="payment-info">
+                <p class="total-label" data-i18n="payment.total">ຍອດຊຳລະ:</p>
+                <h3 id="modalTotal" class="total-amount">0 ₭</h3>
+                <div class="bank-details" data-i18n="payment.bankInfo">
+                    ທະນາຄານ: BCEL One<br>
+                    ເລກບັນຊີ: 160-12-25003534<br>
+                    ຊື່: PHOUTTHASACK SIPAMOUNE MR
+                </div>
+            </div>
+
+            <button class="btn-confirm" onclick="confirmPayment()" data-i18n="payment.confirm">✅ ແຈ້ງໂອນເງິນແລ້ວ</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
